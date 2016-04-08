@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html >
+<!-- \\imagetrend.com\Files\Operations\Education -->
+	<!--manifest="cache.appcache"-->
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
+		<title>Minerva Presentation</title>
+		<link rel="shortcut icon" href="favicon.ico" />
+		<link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
+		<link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled="true" />
+		<link href="css/moon.css" class="theme" rel="stylesheet" />
+		<link href="css/sand.css" class="theme" rel="stylesheet" />
+		<link href="css/sea_wave.css" class="theme" rel="stylesheet" />
+		<link href="css/default.css" class="theme" rel="stylesheet" media="screen"  />
+		<link href="css/common.css" rel="stylesheet" media="screen" />
+	</head>
+	<body>
+		<nav id="helpers">
+			<button title="Previous slide" id="nav-prev" class="nav-prev">&larr;</button>
+			<button title="Jump to a random slide" id="slide-no">5</button>
+			<button title="Next slide" id="nav-next" class="nav-next">&rarr;</button>
+			<menu>
+				<button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
+				<!-- <button type="checkbox" data-command="resources" title="View Related Resources">☆</button> -->
+				<button type="checkbox" data-command="notes" title="View Slide Notes">✏</button>
+				<button type="checkbox" data-command="source" title="View slide source">↻</button>
+				<button type="checkbox" data-command="help" title="View Help">?</button>
+			</menu>
+		</nav>
+		<div class="presentation">
+			<div id="presentation-counter">Loading...</div>
+			<div class="slides">
+				<div class="slide" id="landing-slide">
+					<style>
+						#landing-slide p {
+							font-size: 35px;
+						}
+					</style>
+					<section class="middle">
+						<p>This presentation is an HTML5 website</p>
+						<p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
+					</section>
+					<aside class="note">
+						<section>
+							Welcome! (This field is for presenter notes and commentary.)
+						</section>
+					</aside>
+				</div>
+				<div class="slide" id="controls-slide">
+					<header>Slides controls</header>
+					<style>
+						#controls-slide li, #controls-slide p {
+							font-size: 32px;
+						}
+						#controls-slide .key {
+							bottom: 2px;
+						}
+					</style>
+					<section>
+						<ul>
+							<li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
+							<li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out if slides don’t fit.</li>
+							<li><span class="key">S</span> to view page source.</li>
+							<li><span class="key">T</span> to change the theme.</li>
+							<li><span class="key">H</span> to toggle syntax highlight.</li>
+							<li><span class="key">N</span> to toggle speaker notes.</li>
+							<li><span class="key">3</span> to toggle 3D effect.</li>
+							<li><span class="key">0</span> to toggle help.</li>
+						</ul>
+					</section>
+				</div>
+				<div class="slide" id="title-slide">
+					<style>
+						#title-slide h1, #title-slide h2 {
+							color: black;
+						}
+						#title-slide h1 {
+							letter-spacing: -2px;
+							font-size: 96px;
+						}
+						#title-slide h2 {
+							margin-top: -5px;
+							font-size: 40px;
+							letter-spacing: -1px;
+						}
+					</style>
+					<section class="middle">
+						<hgroup>
+							<h1>Minerva</h1>
+							<h2>A brief history of the little framework that could</h2>
+						</hgroup>
+					</section>
+				</div>
+
+				<div class="slide" id="authors">
+					<header>Who Am I?</header>
+					<section>
+						<h3>Josh Knutson</h3>
+						<ul>
+							<li>Software Developer 3</li>
+							<li>@ Imagtrend for 8+ years</li>
+							<li>Working in CF, JS, CSS, and some .NET</li>
+						</ul>
+					</section>
+				</div>
+
+
+				<div class="slide" id="table-of-contents">
+					<header>
+						<h1>Today, we will cover...</h1>
+					</header>
+					<style>
+						#toc-list > li {
+							font-size: 26px;
+							line-height: 33px;
+							opacity: 0.85;
+						}
+						#toc-list > li:hover {
+							opacity: 1;
+						}
+						#toc-list a {
+							border-bottom: 0;
+						}
+						#toc-list a:hover{
+							border-bottom: 2px solid #3f3f3f;
+						}
+						#toc-list img {
+							vertical-align: middle;
+							margin-left: 15px;
+						}
+					</style>
+					<section>
+						<ul id="toc-list"></ul>
+					</section>
+				</div>
+
+				<!-- don't touch above this line -->
+				 <div class="slide transitionSlide" id="recap-title">
+					<section class="middle">
+						<h2>Quick Recap</h2>
+						<img src="http://www.html5rocks.com/static/images/identity/classes_32/HTML5_3D_Effects_32.png">
+					</section>
+				</div>
+
+				<div class="slide" id="minerva-title">
+					<header>Minerva</header>
+					<section>
+					<table>
+					<tr><td> <blockquote>Roman name of Greek goddess Athena <br />-Goddess of wisdom, crafts, and other stuff</blockquote></td>
+					<td rowspan="2"><img src="src/5_athena_by_sheppardarts-d7lm21r.jpg" style="max-height: 50%"/></td></tr>
+					<tr><td><blockquote>Township in NW Minnesota by Bemidji</blockquote></td></tr>
+					</table>
+					</section>
+				</div>
+
+				<div class="slide" id="the-what-slide">
+					<header>What is Minerva</header>
+					<section>
+						<div>
+							<ul>
+								<li>Shared Code repository</li>
+								<li>Not project specific</li>
+								<li>No code related to schools, incidents, etc</li>
+								<li>Extensible plug-ins in seperate repo</li>
+								<li>Unit testing rolled with repo</li>
+								<li>Document Generator rolled with repo</li>
+								<li><a href="https://svn.imagetrend.com/svn/minerva/trunk/src/">https://svn.imagetrend.com/svn/minerva/trunk/src/</a></li>
+							</ul>
+						</div>
+					</section>
+				</div>
+
+
+				<div class="slide" id="architecture">
+					<header>
+						<h1>Architecture</h1>
+					</header>
+					<section>
+						<div>
+							<ul>
+								<li>Service Oriented Architecture</li>
+								<li>Model-View-Controller design pattern</li>
+								<li><img src="src/architecture.png" /></li>
+							</ul>
+							</div>
+					</section>
+				</div>
+
+				<div class="slide" id="coldspring">
+					<header>Coldspring</header>
+					<section>
+						<div>
+							<ul>
+								<li>Open source dependency injection framework for ColdFusion
+								<ul>
+									<li>Based off the Spring framework for Java</li>
+									<li>Manages components (CFCs)</li>
+								</ul>
+							</li>
+							<li>http://www.coldspringframework.org/
+							</li>
+							</ul>
+							<img src="src/coldspring-logo.png" />
+							</div>
+					</section>
+				</div>
+
+				<div class="slide" id="scope-helpers">
+					<header>Helpers Scope</header>
+					<section>
+						<div>
+							<ul>
+								<li>Utility components used for common methods
+								<ul>
+									<li>Managing scoped data (request, session)</li>
+									<li>Displaying form fields</li>
+									<li>Formatting data</li>
+									<li>Accessing config settings</li>
+								</ul>
+							</li>
+							<li>Created by ColdSpring post-processor
+									<ul>
+										<li>HelpersScopePostProcessor.cfc</li>
+									</ul>
+							</li>
+							<li>Available to all singleton beans and views</li>
+							</ul>
+							</div>
+					</section>
+				</div>
+
+				<div class="slide" id="scope-helpers-def">
+					<header>Helpers Bean Definition</header>
+					<section>
+						<div>
+							<pre><code class="language-xml">
+&lt;bean id=&quot;helpers&quot;
+     class=&quot;minerva.utils.beans.factory.HelpersScopePostProcessor&quot;
+     bean-post-processor=&quot;true&quot;&gt;
+     &lt;property name=&quot;directories&quot;&gt;
+          &lt;list&gt;
+               &lt;value&gt;/cornerstone/app/helpers/&lt;/value&gt;
+               &lt;value&gt;/minerva/app/helpers/&lt;/value&gt;
+          &lt;/list&gt;
+     &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+							</div>
+					</section>
+				</div>
+
+				<div class="slide" id="beans-helpers">
+					<header>Beans Scope</header>
+					<section>
+						<div>
+							<ul>
+								<li>Annotation-based autowiring</li>
+								<li><pre><code class="language-xml">&lt;cfcomponent beans=&quot;userService&quot;&gt;</code></pre></li>
+								<li>Created by ColdSpring post-processor
+									<ul><li>BeansScopePostProcessor.cfc</li></ul></li>
+								<li>Helps keep ColdSpring XML small</li>
+								<li>Available inside all singleton beans</li>
+							</ul>
+							</div>
+					</section>
+				</div>
+
+				<div class="slide" id="components">
+					<header>Base Components</header>
+					<section>
+					<div>
+							<ul>
+							<li>Contain core functionality</li>
+							<li>Project components should extend base components</li>
+								<li><img src="src/components.png" /></li>
+							</ul>
+							</div>
+				 </section>
+				</div>
+
+				<div class="slide" id="convenience-methods">
+					<header>Convenience Methods</header>
+					<section>
+					<div>
+							<ul>
+							<li>minerva.base.Component
+							<ul>
+								<li>getBean()</li>
+								<li>getBeans()</li>
+								<li>containsBean()</li>
+								<li>getBeanFactory()</li>
+							</ul>
+							</li>
+							<li>minerva.base.View
+							<ul>
+								<li>getValue()</li>
+								<li>setValue()</li>
+								<li>hasValues()</li>
+								<li>getValues()</li>
+							</ul>
+							</li>
+							</ul>
+							</div>
+				 </section>
+				</div>
+
+					<div class="slide" id="random-methods">
+					<header>Random Utility Functions</header>
+					<section>
+					<div>
+					<table width="98%"><tr>
+					<td width="50%">
+							<ul>
+							<li>arrayToQuery()</li>
+							<li>arrayCombine()</li>
+							<li>arraySlice()</li>
+							<li>arrayReverse()</li>
+							</ul>
+							</td>
+							<td>
+							<ul>
+							<li>structToArray()</li>
+							<li>structToHidden()</li>
+							<li>structToQuery()</li>
+							<li>structToQueryString()</li>
+							<li>structsToQuery()</li>
+							</ul>
+							</td>
+							</tr>
+							<tr>
+							<td>
+							<ul>
+							<li>csvToQuery()</li>
+							<li>getBoolean()</li>
+							<li>getNumeric()</li>
+							<li>findValue()</li>
+							<li>queryStringToStruct()</li>
+							<li>xmlToStruct()</li>
+							<li>xmlToArray()</li>
+							</ul>
+							</td>
+							<td>
+							<ul>
+							<li>queryToArray()</li>
+							<li>queryToCSV()</li>
+							<li>queryToList()</li>
+							<li>queryToStruct()</li>
+							<li>queryToStructs()</li>
+							</ul>
+							</td>
+							</tr>
+							</table>
+							</div>
+				 </section>
+				</div>
+
+				<div class="slide" id="other-goodies">
+					<header>Other Goodies</header>
+					<section>
+					<div>
+							<ul>
+							<li>Parent environments in environment.xml that can inherit for faster setup of new environments</li>
+							<li>Packages in AssetManager</li>
+							<li>Display helpers using permissions</li>
+							<li>XML based managers
+							<ul>
+							<li>AccessManager</li>
+							<li>ActionManager</li>
+							<li>ActivityManager</li>
+							<li>AlertManager</li>
+							</ul>
+							</li>
+							</ul>
+							</div>
+				 </section>
+				</div>
+
+				<!-- <div class="slide" id="controllers">
+					<header>Controllers</header>
+					<section>
+					<div>
+							<ul>
+								<li>Very Thin - shouldn't contain business logic</li>
+								<li>Call methods on appropriate services</li>
+								<li>Add Flash messages to subsequent request</li>
+								<li>Redirect browser</li>
+								<li><img src="src/controllers.png" /></li>
+							</ul>
+							</div>
+				 </section>
+				</div>
+
+				<div class="slide" id="services">
+					<header>Services</header>
+					<section>
+					<div>
+							<ul>
+								<li>Part of the Model</li>
+								<li>Contains business logic</li>
+								<li>Application's API</li>
+								<li>Key to application
+										<ul>
+												<li>Consistently expose data to multiple front-ends</li>
+												<li>ColdFusion, HTML with JSON responses </li>
+										</ul>
+								</li>
+							</ul>
+							</div>
+				 </section>
+				</div>
+
+				<div class="slide" id="models">
+					<header>Models</header>
+					<section>
+					<div>
+							<ul>
+								<li>Contains business Logic</li>
+								<li>Made up of several components</li>
+								<li>Gateways: encapsulate database access</li>
+								<li>Utils: encapsulate re-usuable code for rendering HTML</li>
+								<li>Transients: useful for complex per-request operations
+									<ul>
+										<li>ReportWriter</li>
+									</ul>
+								</li>
+							</ul>
+							</div>
+				 </section>
+				</div>
+
+
+
+
+				<div class="slide transitionSlide" id="scope-title">
+					<section class="middle">
+						<h2>Scope</h2>
+						<img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Offline_Storage_64.png"  style="display:none;">
+					</section>
+				</div> -->
+
+				<!-- <div class="slide" id="breakpoint-breakdown">
+					<header>Breakpoints</header>
+					<section>
+						<h3>Benefits</h3>
+						<ul>
+							<li>Navigating Code</li>
+							<li>Standard</li>
+							<li>Conditional</li>
+						</ul>
+
+						<h3>Functionality</h3>
+						<ul>
+							<li>Continue</li>
+							<li>Step Over</li>
+							<li>Step Into</li>
+							<li>Step Out</li>
+						</ul>
+					</section>
+				</div>
+
+				<div class="slide" id="breakpoint-example">
+					<header>Breakpoints</header>
+					<section>
+						<h3>Example</h3>
+						<img src="src/breakpoint.png" />
+					</section>
+				</div>
+
+				<div class="slide transitionSlide" id="watches-title">
+					<section class="middle">
+						<h2>Watches</h2>
+							 <p>Auto-updating value list for specified variables. Exactly like variable watches in every other step debugger ever</p>
+							 <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Offline_Storage_64.png" style="display:none" >
+					</section>
+				</div>
+
+				<div class="slide">
+					<style tyle="text/css">
+						.watch{
+								display: block;
+								margin: 0 auto;
+						}
+					</style>
+					<header>Watches</header>
+					<section>
+						<img class="watch" src="src/apple-watch.jpg" />
+					</section>
+				</div>
+				<div class="slide">
+					<header>Adding a watch:multiple ways</header>
+					<section>
+						<ul>
+							<li>Sources:Select JS Variable then right-click</li>
+							<li>Click '+' on Watch Expressions</li>
+							<li>Right-click inside Watch Expressions panel</li>
+						</ul>
+					</section>
+				</div>
+
+				<div class="slide">
+					<header>Adding a watch:multiple ways</header>
+					<section>
+						<h3>Sources:Select JS Variable then right-click</h3>
+						<img src="src/watch.png" />
+					</section>
+				</div>
+
+				<div class="slide">
+					<header>Adding a watch:multiple ways</header>
+					<section>
+						<h3>Click '+' on Watch Expressions</h3>
+						<img src="src/watches2.png" />
+					</section>
+				</div>
+
+				<div class="slide">
+					<header>Adding a watch:multiple ways</header>
+					<section>
+						<h3>Right-click inside Watch Expressions panel</h3>
+						<img src="src/watches1.png" />
+					</section>
+				</div>
+
+				 -->
+
+				 <div class="slide transitionSlide" id="console-title">
+					<section class="middle">
+						<h2>Problems</h2>
+						<p>What problems arose from the shared framework</p>
+						<img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Offline_Storage_64.png"  style="display:none;">
+					</section>
+				</div>
+
+
+
+			<!-- 	<div class="slide " id="resources">
+					<header>
+						<h1>Learn More</h1>
+					</header>
+					<section>
+						<ul class="bullets">
+							<li><a href="https://developer.chrome.com/devtools/docs/javascript-debugging" target="_blank"/>Google Chrome Debug Guide</a></li>
+							<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Debugging" target="_blank"/>Mozilla Debug Guide</a></li>
+							<li><a href="https://msdn.microsoft.com/en-us/library/bg182326(v=vs.85).aspx" target="_blank"/>Internet Explorer Developer Tools Guide</a></li>
+							<li><a href="http://devtoolsecrets.com/" target="_blank"/>Dev Tool Secrets</a></li>
+						</ul>
+					</section>
+				</div> -->
+
+				<!-- don't touch below this line -->
+				<div class="slide" id="formula-outro-slide">
+					<section class="middle formula">
+						<img src="src/logo.png" />
+						<p>
+							Questions?
+						</p>
+					</section>
+				</div>
+			</div>
+			<!-- slides -->
+			<div id="speaker-note" class="invisible" style="display: none;">
+			</div>
+			<!-- speaker note -->
+			<aside id="help" class="sidebar invisible" style="display: hidden;">
+				<table>
+					<caption>Help</caption>
+					<tbody>
+						<tr>
+							<th>Move Around</th>
+							<td>&larr;&nbsp;&rarr;</td>
+						</tr>
+						<tr>
+							<th>Source File</th>
+							<td>s</td>
+						</tr>
+						<tr>
+							<th>Change Theme</th>
+							<td>t</td>
+						</tr>
+						<tr>
+							<th>Syntax Highlight</th>
+							<td>h</td>
+						</tr>
+						<tr>
+							<th>Speaker Notes</th>
+							<td>n</td>
+						</tr>
+						<tr>
+							<th>Toggle 3D</th>
+							<td>3</td>
+						</tr>
+						<tr>
+							<th>Help</th>
+							<td>0</td>
+						</tr>
+					</tbody>
+				</table>
+			</aside>
+		</div>
+		<!-- presentation -->
+		<script src="src/prettify/prettify.js" onload="prettyPrint();" defer></script>
+		<script src="js/utils.js"></script>
+		<script>
+			// Check if new appcache is available, load it, and reload page.
+			if (window.applicationCache) {
+				window.applicationCache.addEventListener('updateready', function(e) {
+					if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+							window.applicationCache.swapCache();
+						if (confirm('A new version of this site is available. Load it?')) {
+							window.location.reload();
+						}
+					}
+				}, false);
+			}
+		</script>
+	</body>
+</html>
