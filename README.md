@@ -1,3 +1,3 @@
 # minerva-slides
 
-View on [GitHub Pages](joshknutson.github.io/minerva-slides)
+View on [GitHub Pages](http://joshknutson.github.io/minerva-slides/)
