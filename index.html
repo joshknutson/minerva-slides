@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" >
+<!-- manifest="cache.appcache" -->
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
 		<title>Minerva Preso</title>
+		<link rel="shortcut icon" href="favicon.ico" />
 		<meta name="description" content="A framework for easily creating Web apps with Minerva">
 		<meta name="author" content="Josh Knutson">
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -65,6 +68,14 @@
 						</ul>
 					</section>
 					<section>
+						<h2>History</h2>
+						<ul>
+							<li>Started in 2009</li>
+							<li>over 100 authors have contributed</li>
+							<li>Convention based</li>
+						</ul>
+					</section>
+					<section>
 						<h2>Architecture</h2>
 						<ul>
 							<li>Service Oriented Architecture</li>
@@ -117,14 +128,14 @@
 						<div>
 							<pre><code class="language-xml">
 &lt;bean id=&quot;helpers&quot;
-     class=&quot;minerva.utils.beans.factory.HelpersScopePostProcessor&quot;
-     bean-post-processor=&quot;true&quot;&gt;
-     &lt;property name=&quot;directories&quot;&gt;
-          &lt;list&gt;
-               &lt;value&gt;/trauma/app/helpers/&lt;/value&gt;
-               &lt;value&gt;/minerva/app/helpers/&lt;/value&gt;
-          &lt;/list&gt;
-     &lt;/property&gt;
+	 class=&quot;minerva.utils.beans.factory.HelpersScopePostProcessor&quot;
+	 bean-post-processor=&quot;true&quot;&gt;
+	 &lt;property name=&quot;directories&quot;&gt;
+		  &lt;list&gt;
+			   &lt;value&gt;/trauma/app/helpers/&lt;/value&gt;
+			   &lt;value&gt;/minerva/app/helpers/&lt;/value&gt;
+		  &lt;/list&gt;
+	 &lt;/property&gt;
 &lt;/bean&gt;
 </code></pre>
 						</div>
@@ -183,6 +194,15 @@
 							</li>
 						</ul>
 					</div>
+				</section>
+				<section>
+					<h2>Custom Tags</h2>
+					Tags to call display helpers but look more like html
+<pre><code class="language-xml">&lt;c:select name=&quot;FacilityID&quot; label=&quot;Facility&quot;
+options=&quot;#local.getHospitals#&quot; value=&quot;#local.defaultOffice#&quot;
+required=&quot;true&quot; message=&quot;A facility is required&quot; /&gt;
+</code></pre>
+<pre><code class="language-xml">&lt;c:number name=&quot;sort_order&quot; value=&quot;#TheSortOrder#&quot; /&gt;</code></pre>
 				</section>
 				<section>
 					<h2>Random Utility Functions</h2>
@@ -274,6 +294,7 @@
 								<li class="fragment">Any developer can commit</li>
 								<li class="fragment">Most will commit to fix a 'thing'</li>
 								<li class="fragment">they miss the big picture</li>
+								<li class="fragment">Documentation</li>
 							</ul>
 						</div>
 					</section>
@@ -283,6 +304,7 @@
 							<p>Original Code Champions moved on to other opportunities</p>
 							<p> Management saw it as a large monolith code base </p>
 							<p> Developers blame their problems with it  </p>
+							<p>No real documentation or good example code</p>
 						</div>
 					</section>
 				</section>
@@ -294,6 +316,10 @@
 					<section >
 						<h2>Ownership</h2>
 						<p>Have sense of ownership belonging to leads to a certain extent<br /> They should know what other teams have developed that they could leverage</p>
+					</section>
+					<section >
+						<h2>Sample Project with Documentation</h2>
+						<p>Have a Sample Project that would be heavily documented, akin to bootstrap sample page possibly</p>
 					</section>
 					<section >
 						<h2>More Components</h2>
@@ -331,7 +357,17 @@
 					{ src: 'plugin/notes/notes.js', async: true }
 				]
 			});
-
+		// Check if new appcache is available, load it, and reload page.
+		  if (window.applicationCache) {
+			window.applicationCache.addEventListener('updateready', function(e) {
+			  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+				  window.applicationCache.swapCache();
+				if (confirm('A new version of this site is available. Load it?')) {
+				  window.location.reload();
+				}
+			  }
+			}, false);
+		  }
 		</script>
 	</body>
 </html>
